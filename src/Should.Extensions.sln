@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{B4549633-EF4E-4BA1-A189-646F4137629D}"
 	ProjectSection(SolutionItems) = preProject
 		..\build.bat = ..\build.bat
+		CommonAssemblyInfo.cs = CommonAssemblyInfo.cs
 		..\default.ps1 = ..\default.ps1
 	EndProjectSection
 EndProject
