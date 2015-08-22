@@ -83,6 +83,7 @@ task Test {
 }
 
 task Nuget {
+    $buildNumber = Generate-VersionNumber
 	"building version:  $buildNumber"
 		$nugetBuildNumber = $buildNumber
 
