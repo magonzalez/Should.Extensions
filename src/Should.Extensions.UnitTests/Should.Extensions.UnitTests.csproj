@@ -50,9 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssertExtensions\IgnoreMissingPropertiesFalseTests.cs" />
-    <Compile Include="AssertExtensions\IgnoreMissingPropertiesTrueTests.cs" />
-    <Compile Include="AssertExtensions\SimpleTests.cs" />
+    <Compile Include="AssertExtensions\HasSamePropertyValuesTests.cs" />
+    <Compile Include="AssertExtensions\HasSameSharedPropertyValuesTests.cs" />
     <Compile Include="Models\TestModelBuilder.cs" />
     <Compile Include="Models\TestModelOne.cs" />
     <Compile Include="Models\TestModelThree.cs" />
@@ -62,9 +61,8 @@
     <Compile Include="ShouldExtensions\ShouldEqualDateTimeTests.cs" />
     <Compile Include="ShouldExtensions\ShouldEqualNullableDateTimeTests.cs" />
     <Compile Include="ShouldExtensions\ShouldHaveSamePropertiesTests.cs" />
-    <Compile Include="ShouldExtensions\ShouldHaveSamePropertyValueTests\IgnoreMissingPropertiesFalseTests.cs" />
-    <Compile Include="ShouldExtensions\ShouldHaveSamePropertyValueTests\IgnoreMissingPropertiesTrueTests.cs" />
-    <Compile Include="ShouldExtensions\ShouldHaveSamePropertyValueTests\SimpleTests.cs" />
+    <Compile Include="ShouldExtensions\ShouldHaveSamePropertyValuesTests.cs" />
+    <Compile Include="ShouldExtensions\ShouldHaveSameSharedPropertyValuesTests.cs" />
     <Compile Include="UnitTestSetupFixture.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,8 +5,26 @@ using Should.Extensions.UnitTests.Models;
 namespace Should.Extensions.UnitTests.ShouldExtensions.ShouldHaveSamePropertyValueTests
 {
     [TestFixture]
-    public class SimpleTests
+    public class ShouldHaveSamePropertyValuesTests
     {
+        [Test]
+        public void ShouldThrowAssertExceptionWhenActualHasAdditionalProperties()
+        {
+            var actual = TestModelBuilder.Build<TestModelOne>();
+            var expected = actual.ToTestModelTwo();
+
+            Assert.Throws<AssertException>(() => actual.ShouldHaveSamePropertyValues(expected));
+        }
+
+        [Test]
+        public void ShouldThrowAssertExceptionWhenExpectedHasAdditionalProperties()
+        {
+            var actual = TestModelBuilder.Build<TestModelTwo>();
+            var expected = actual.ToTestModelOne();
+
+            Assert.Throws<AssertException>(() => actual.ShouldHaveSamePropertyValues(expected));
+        }
+
         [Test]
         public void ShouldThrowWhenValuesAreDifferent()
         {

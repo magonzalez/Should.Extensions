@@ -4,8 +4,30 @@ using Should.Extensions.UnitTests.Models;
 namespace Should.Extensions.UnitTests.AssertExtensions
 {
     [TestFixture]
-    public class SimpleTests
+    public class HasSamePropertyValuesTests
     {
+        [Test]
+        public void ShouldReturnFalseWhenActualHasAdditionalProperties()
+        {
+            var actual = TestModelBuilder.Build<TestModelOne>();
+            var expected = actual.ToTestModelTwo();
+
+            var result = actual.HasSamePropertyValues(expected);
+
+            result.ShouldBeFalse();
+        }
+
+        [Test]
+        public void ShouldReturnFalseWhenExpectedHasAdditionalProperties()
+        {
+            var actual = TestModelBuilder.Build<TestModelTwo>();
+            var expected = actual.ToTestModelOne();
+
+            var result = actual.HasSamePropertyValues(expected);
+
+            result.ShouldBeFalse();
+        }
+
         [Test]
         public void ShouldReturnFalseWhenValuesAreDifferent()
         {

@@ -1,28 +1,28 @@
 ﻿using NUnit.Framework;
-using Should.Core.Exceptions;
+
 using Should.Extensions.UnitTests.Models;
 
 namespace Should.Extensions.UnitTests.ShouldExtensions.ShouldHaveSamePropertyValueTests
 {
     [TestFixture]
-    public class IgnoreMissingPropertiesFalseTests
+    public class ShouldHaveSameSharedPropertyValuesTests
     {
         [Test]
-        public void ShouldThrowAssertExceptionWhenActualHasAdditionalProperties()
+        public void ShouldNotThrowAssertExceptionWhenActualHasAdditionalProperties()
         {
             var actual = TestModelBuilder.Build<TestModelOne>();
             var expected = actual.ToTestModelTwo();
 
-            Assert.Throws<AssertException>(() => actual.ShouldHaveSamePropertyValues(expected, false));
+            Assert.DoesNotThrow(() => actual.ShouldHaveSameSharedPropertyValues(expected));
         }
 
         [Test]
-        public void ShouldThrowAssertExceptionWhenExpectedHasAdditionalProperties()
+        public void ShouldNotThrowAssertExceptionWhenExpectedHasAdditionalProperties()
         {
             var actual = TestModelBuilder.Build<TestModelTwo>();
             var expected = actual.ToTestModelOne();
 
-            Assert.Throws<AssertException>(() => actual.ShouldHaveSamePropertyValues(expected, false));
+            Assert.DoesNotThrow(() => actual.ShouldHaveSameSharedPropertyValues(expected));
         }
     }
 }

@@ -4,7 +4,7 @@ using Should.Extensions.UnitTests.Models;
 namespace Should.Extensions.UnitTests.AssertExtensions
 {
     [TestFixture]
-    public class IgnoreMissingPropertiesTrueTests
+    public class HasSameSharedPropertyValuesTests
     {
         [Test]
         public void ShouldReturnTrueWhenActualHasAdditionalProperties()
@@ -12,7 +12,7 @@ namespace Should.Extensions.UnitTests.AssertExtensions
             var actual = TestModelBuilder.Build<TestModelOne>();
             var expected = actual.ToTestModelTwo();
 
-            var result = actual.HasSamePropertyValues(expected, true);
+            var result = actual.HasSameSharedPropertyValues(expected);
 
             result.ShouldBeTrue();
         }
@@ -23,7 +23,7 @@ namespace Should.Extensions.UnitTests.AssertExtensions
             var actual = TestModelBuilder.Build<TestModelTwo>();
             var expected = actual.ToTestModelOne();
 
-            var result = actual.HasSamePropertyValues(expected, true);
+            var result = actual.HasSameSharedPropertyValues(expected);
 
             result.ShouldBeTrue();
         }
