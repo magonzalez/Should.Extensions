@@ -87,7 +87,7 @@ task Nuget {
 	"building version:  $buildNumber"
 		$nugetBuildNumber = $buildNumber
 
-	if ($buildNumber -match "(\d+\.\d+\.\d+)*") {
+	if ($buildNumber -match "(\d+\.\d+\.\d+\.\d+)*") {
 		$nugetBuildNumber = $matches[1]
 	}
 

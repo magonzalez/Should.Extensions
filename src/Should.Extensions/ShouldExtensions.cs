@@ -50,7 +50,7 @@ namespace Should.Extensions
             }
         }
 
-        public static void ShouldHaveSameItems<T>(this IEnumerable<T> actual, IEnumerable<T> expected)
+        public static void ShouldHaveSameValueItems<T>(this IEnumerable<T> actual, IEnumerable<T> expected)
             where T : struct
         {
             if (expected == null)
