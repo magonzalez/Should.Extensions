@@ -198,7 +198,8 @@ namespace Should.Extensions
         {
             actual.ShouldBeNullIfExpectingNull(expected);
 
-            actual.Value.ShouldEqualDateTime(expected.Value, errorMessage);
+            if ((actual.HasValue) && (expected.HasValue))
+                actual.Value.ShouldEqualDateTime(expected.Value, errorMessage);
         }
 
         /// <summary>

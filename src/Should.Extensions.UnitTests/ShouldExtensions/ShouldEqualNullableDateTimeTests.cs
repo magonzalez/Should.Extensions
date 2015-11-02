@@ -58,5 +58,14 @@ namespace Should.Extensions.UnitTests.ShouldExtensions
 
             Assert.Throws<FalseException>(() => actual.ShouldEqualDateTime(expected));
         }
+
+        [Test]
+        public void ShouldAllowNullValues()
+        {
+            DateTime? expected = null;
+            DateTime? actual = null;
+
+            Assert.DoesNotThrow(() => actual.ShouldEqualDateTime(expected));
+        }
     }
 }
